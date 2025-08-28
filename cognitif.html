@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibilité - Handicap cognitif</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Handicap cognitif</h1>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="visuel.html">Visuel</a></li>
+        <li><a href="auditif.html">Auditif</a></li>
+        <li><a href="moteur.html">Moteur</a></li>
+        <li><a href="cognitif.html" aria-current="page">Cognitif</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Introduction -->
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>
+        Les utilisateurs avec troubles cognitifs ont besoin d’une interface simple, cohérente et prévisible. 
+        Des instructions claires, un contenu structuré et des repères visuels facilitent la compréhension et la navigation.
+      </p>
+    </section>
+
+    <!-- Difficultés -->
+    <section id="difficultes">
+      <h2>Difficultés rencontrées</h2>
+      <ul>
+        <li>Pages surchargées d’informations et de médias.</li>
+        <li>Instructions longues ou ambiguës.</li>
+        <li>Navigation imprévisible ou complexe.</li>
+        <li>Manque de repères visuels et symboles pour guider l’utilisateur.</li>
+      </ul>
+    </section>
+
+    <!-- Solutions et bonnes pratiques -->
+    <section id="solutions">
+      <h2>Solutions et bonnes pratiques</h2>
+      <ul>
+        <li>Interface épurée avec sections claires et hiérarchisées.</li>
+        <li>Instructions courtes, simples et cohérentes.</li>
+        <li>Menus prévisibles et navigation logique.</li>
+        <li>Repères visuels et icônes pour guider la compréhension.</li>
+        <li>Feedback clair après chaque action, avec alertes accessibles.</li>
+      </ul>
+    </section>
+
+    <!-- Exemples de code -->
+    <section id="exemples">
+      <h2>Exemples de code</h2>
+
+      <h3>Menu simple et prévisible</h3>
+      <pre><code>&lt;nav aria-label="Menu simplifié"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#intro"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#solutions"&gt;Solutions&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+
+      <h3>Bouton avec instruction claire</h3>
+      <pre><code>&lt;button aria-label="Confirmer inscription"&gt;Confirmer&lt;/button&gt;</code></pre>
+
+      <h3>Feedback JavaScript accessible</h3>
+      <pre><code>document.querySelectorAll('button').forEach(btn =&gt; {
+  btn.addEventListener('click', () =&gt; alert('Action confirmée !'));
+});</code></pre>
+    </section>
+
+    <!-- Outils -->
+    <section id="outils">
+      <h2>Outils et ressources</h2>
+      <ul>
+        <li><a href="https://wave.webaim.org/" target="_blank">Wave</a> – Vérification structure et lisibilité</li>
+        <li><a href="https://www.deque.com/axe/" target="_blank">axe DevTools</a> – Détection problèmes UX et accessibilité</li>
+        <li><a href="https://developers.google.com/web/tools/lighthouse" target="_blank">Lighthouse</a> – Audit complet</li>
+        <li>Tests utilisateurs avec personnes concernées pour valider compréhension</li>
+      </ul>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        En appliquant ces pratiques, vous rendez vos applications accessibles aux personnes avec troubles cognitifs. 
+        Une interface claire, cohérente et prévisible améliore la compréhension et l’expérience utilisateur pour tous.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Guide d’accessibilité web | Tous droits réservés</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

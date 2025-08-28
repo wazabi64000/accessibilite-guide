@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibilité - Handicap auditif</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Handicap auditif</h1>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="visuel.html">Visuel</a></li>
+        <li><a href="auditif.html" aria-current="page">Auditif</a></li>
+        <li><a href="moteur.html">Moteur</a></li>
+        <li><a href="cognitif.html">Cognitif</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Introduction -->
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>
+        Les personnes sourdes ou malentendantes dépendent de signaux visuels et textuels pour accéder à l’information. 
+        Tout contenu audio ou vidéo doit être accompagné de sous-titres ou de transcriptions pour garantir l’accessibilité.
+      </p>
+    </section>
+
+    <!-- Difficultés -->
+    <section id="difficultes">
+      <h2>Difficultés rencontrées</h2>
+      <ul>
+        <li>Vidéos ou audios sans sous-titres ni transcription.</li>
+        <li>Alertes uniquement sonores sans signal visuel.</li>
+        <li>Instructions verbales non doublées par du texte.</li>
+        <li>Notifications audio importantes non accessibles autrement.</li>
+      </ul>
+    </section>
+
+    <!-- Solutions et bonnes pratiques -->
+    <section id="solutions">
+      <h2>Solutions et bonnes pratiques</h2>
+      <ul>
+        <li>Ajouter des sous-titres pour toutes les vidéos avec la balise <code>&lt;track&gt;</code>.</li>
+        <li>Fournir une transcription complète pour tout contenu audio.</li>
+        <li>Utiliser des alertes visuelles ou textuelles avec <code>aria-live="polite"</code> pour signaler les événements importants.</li>
+        <li>Ne jamais transmettre une information critique uniquement par le son.</li>
+        <li>Inclure des icônes ou indicateurs visuels pour renforcer la compréhension.</li>
+      </ul>
+    </section>
+
+    <!-- Exemples de code -->
+    <section id="exemples">
+      <h2>Exemples de code</h2>
+
+      <h3>Vidéo avec sous-titres</h3>
+      <pre><code>&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;track src="subtitles.vtt" kind="subtitles" srclang="fr" label="Français"&gt;
+  Votre navigateur ne supporte pas la vidéo.
+&lt;/video&gt;</code></pre>
+
+      <h3>Alerte accessible</h3>
+      <pre><code>&lt;div id="alert" role="alert"&gt;Nouvelle notification !&lt;/div&gt;</code></pre>
+
+      <h3>JavaScript pour alertes accessibles</h3>
+      <pre><code>function accessibleAlert(message){
+  const alertBox = document.getElementById('alert');
+  alertBox.textContent = message;
+}
+
+document.querySelectorAll('.alert-btn').forEach(btn =&gt; {
+  btn.addEventListener('click', () =&gt; accessibleAlert('Action réussie !'));
+});</code></pre>
+    </section>
+
+    <!-- Outils -->
+    <section id="outils">
+      <h2>Outils et ressources</h2>
+      <ul>
+        <li><a href="https://wave.webaim.org/" target="_blank">Wave</a> – Vérification de la structure et visibilité</li>
+        <li><a href="https://www.deque.com/axe/" target="_blank">axe DevTools</a> – Détection de problèmes d’accessibilité</li>
+        <li><a href="https://developers.google.com/web/tools/lighthouse" target="_blank">Lighthouse</a> – Audit complet</li>
+        <li>Testez les sous-titres et transcriptions avec des utilisateurs malentendants</li>
+      </ul>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        En fournissant des sous-titres, des transcriptions et des alertes visuelles, vous permettez aux utilisateurs sourds ou malentendants de naviguer et comprendre vos contenus facilement. 
+        L’accessibilité audio-visuelle améliore l’expérience pour tous.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Guide d’accessibilité web | Tous droits réservés</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

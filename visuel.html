@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibilité - Handicap visuel</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Handicap visuel</h1>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="visuel.html" aria-current="page">Visuel</a></li>
+        <li><a href="auditif.html">Auditif</a></li>
+        <li><a href="moteur.html">Moteur</a></li>
+        <li><a href="cognitif.html">Cognitif</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Introduction -->
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>
+        Les utilisateurs malvoyants ou non-voyants utilisent des lecteurs d’écran, des loupes ou des navigateurs braille. 
+        Pour leur offrir une expérience complète, il est essentiel de structurer correctement vos pages, d’utiliser des couleurs contrastées et d’ajouter des descriptions textuelles pour tous les éléments visuels.
+      </p>
+    </section>
+
+    <!-- Difficultés -->
+    <section id="difficultes">
+      <h2>Difficultés rencontrées</h2>
+      <ul>
+        <li>Images ou icônes sans texte alternatif.</li>
+        <li>Navigation complexe et non linéaire.</li>
+        <li>Contraste insuffisant entre le texte et le fond.</li>
+        <li>Contenu dynamique ou interactif difficilement détectable par les lecteurs d’écran.</li>
+      </ul>
+    </section>
+
+    <!-- Solutions et bonnes pratiques -->
+    <section id="solutions">
+      <h2>Solutions et bonnes pratiques</h2>
+      <ul>
+        <li>Utiliser des balises sémantiques : <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>.</li>
+        <li>Ajouter des attributs <code>alt</code> pour toutes les images et <code>aria-label</code> pour les icônes interactives.</li>
+        <li>Assurer un contraste suffisant entre texte et arrière-plan (outil <a href="https://contrast-ratio.com" target="_blank">Contrast Checker</a>).</li>
+        <li>Organiser la navigation de manière linéaire et logique pour le clavier.</li>
+        <li>Fournir des repères visuels et textuels pour le contenu dynamique avec <code>aria-live</code>.</li>
+      </ul>
+    </section>
+
+    <!-- Exemples de code -->
+    <section id="exemples">
+      <h2>Exemples de code</h2>
+
+      <h3>Bouton accessible avec lecteur d’écran</h3>
+      <pre><code>&lt;button aria-label="Ouvrir le menu principal"&gt;☰&lt;/button&gt;</code></pre>
+
+      <h3>Image avec texte alternatif</h3>
+      <pre><code>&lt;img src="logo.png" alt="Logo de l'application"&gt;</code></pre>
+
+      <h3>Navigation accessible au clavier</h3>
+      <pre><code>&lt;nav aria-label="Menu principal"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#home"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+
+      <h3>Interaction JS accessible</h3>
+      <pre><code>document.querySelectorAll('button').forEach(btn =&gt; {
+  btn.addEventListener('keyup', e =&gt; {
+    if(e.key === "Enter" || e.key === " ") btn.click();
+  });
+});</code></pre>
+    </section>
+
+    <!-- Outils -->
+    <section id="outils">
+      <h2>Outils et ressources</h2>
+      <ul>
+        <li><a href="https://wave.webaim.org/" target="_blank">Wave</a> – Vérification visuelle et sémantique</li>
+        <li><a href="https://www.deque.com/axe/" target="_blank">axe DevTools</a> – Audit automatisé</li>
+        <li><a href="https://developers.google.com/web/tools/lighthouse" target="_blank">Lighthouse</a> – Rapport complet</li>
+        <li><a href="https://www.nvaccess.org/" target="_blank">NVDA</a> – Lecteur d’écran Windows gratuit</li>
+        <li><a href="https://contrast-ratio.com/" target="_blank">Contrast Checker</a> – Vérification de contraste</li>
+      </ul>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        En appliquant ces bonnes pratiques, vous rendez vos applications accessibles aux utilisateurs malvoyants ou non-voyants. 
+        Une navigation cohérente, des textes alternatifs et des contrastes suffisants améliorent l’expérience pour tous.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Guide d’accessibilité web | Tous droits réservés</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

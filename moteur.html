@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibilité - Handicap moteur</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Handicap moteur</h1>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="visuel.html">Visuel</a></li>
+        <li><a href="auditif.html">Auditif</a></li>
+        <li><a href="moteur.html" aria-current="page">Moteur</a></li>
+        <li><a href="cognitif.html">Cognitif</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Introduction -->
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>
+        Les utilisateurs avec un handicap moteur ont besoin de pouvoir naviguer sans effectuer de gestes précis ou rapides. 
+        Les interfaces doivent être compatibles avec le clavier, les dispositifs d’assistance et offrir des boutons et liens faciles à cliquer.
+      </p>
+    </section>
+
+    <!-- Difficultés -->
+    <section id="difficultes">
+      <h2>Difficultés rencontrées</h2>
+      <ul>
+        <li>Boutons ou liens trop petits ou trop rapprochés.</li>
+        <li>Actions nécessitant glisser-déposer ou mouvements rapides.</li>
+        <li>Navigation uniquement à la souris.</li>
+        <li>Formulaires difficiles à remplir pour les personnes utilisant des aides techniques.</li>
+      </ul>
+    </section>
+
+    <!-- Solutions et bonnes pratiques -->
+    <section id="solutions">
+      <h2>Solutions et bonnes pratiques</h2>
+      <ul>
+        <li>Navigation complète au clavier avec ordre logique de tabulation et focus visible.</li>
+        <li>Boutons et zones cliquables suffisamment grands (min 44x44px).</li>
+        <li>Éviter les actions nécessitant vitesse ou glisser-déposer complexes.</li>
+        <li>Ajouter des raccourcis clavier pour les actions fréquentes.</li>
+        <li>Formulaires accessibles avec labels et attributs <code>aria-required</code>.</li>
+      </ul>
+    </section>
+
+    <!-- Exemples de code -->
+    <section id="exemples">
+      <h2>Exemples de code</h2>
+
+      <h3>Bouton accessible</h3>
+      <pre><code>&lt;button id="submitBtn"&gt;Envoyer&lt;/button&gt;</code></pre>
+
+      <h3>Formulaire accessible</h3>
+      <pre><code>&lt;label for="email"&gt;E-mail&lt;/label&gt;
+&lt;input type="email" id="email" name="email" required aria-required="true"&gt;</code></pre>
+
+      <h3>Navigation clavier</h3>
+      <pre><code>document.querySelectorAll('button').forEach(btn =&gt; {
+  btn.addEventListener('keyup', e =&gt; {
+    if(e.key === "Enter" || e.key === " ") btn.click();
+  });
+});</code></pre>
+    </section>
+
+    <!-- Outils -->
+    <section id="outils">
+      <h2>Outils et ressources</h2>
+      <ul>
+        <li><a href="https://wave.webaim.org/" target="_blank">Wave</a> – Vérification visuelle et focus</li>
+        <li><a href="https://www.deque.com/axe/" target="_blank">axe DevTools</a> – Audit automatisé</li>
+        <li><a href="https://developers.google.com/web/tools/lighthouse" target="_blank">Lighthouse</a> – Rapport complet</li>
+        <li>Test manuel avec clavier et dispositifs d’assistance</li>
+      </ul>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        En respectant ces bonnes pratiques, vous permettez aux utilisateurs avec handicap moteur d’interagir facilement avec votre site. 
+        Une navigation accessible et des zones cliquables adaptées améliorent l’expérience pour tous.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Guide d’accessibilité web | Tous droits réservés</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
